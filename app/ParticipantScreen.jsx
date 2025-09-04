@@ -101,21 +101,18 @@ export default function ParticipantScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#ffffffff",
-    padding: 20,
-  },
-  activityContainer: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: "#256c2bff",
-    borderRadius: 5,
-    width: '100%',
+    justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#F9FAFB',
+    padding: 24,
   },
-  activityText: {
-    fontSize: 18,
-    color: "#2e7d32",
+  title: {
+    fontSize: 26,
+    fontWeight: '700',
+    color: '#0F172A',
+    marginBottom: 24,
+    letterSpacing: 0.2,
+    textAlign: 'center',
   },
 });
+
