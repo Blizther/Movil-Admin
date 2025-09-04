@@ -21,7 +21,7 @@ export default function Index() {
 
   return (
     <ImageBackground
-      source={require('../assets/fondo.jpg')} // Ruta de tu imagen
+      source={require('../assets/fondoo.jpg')} // Ruta de tu imagen
       style={styles.background}
       resizeMode="cover" // más recomendado que 'stretch' para que no se deforme
     >
@@ -58,35 +58,45 @@ const styles = StyleSheet.create({
     justifyContent: "space-between", // reparte arriba/abajo
     alignItems: "center",
     padding: 100,
-    backgroundColor: "rgba(0,0,0,0.3)",
+    backgroundColor: "rgba(0,0,0,0.15)",
   },
   logo: {
   width: 260,
   height: 260,
   resizeMode: 'contain',
   marginBottom: 5,
-  marginTop: 100, // sube el logo
+  marginTop: 10, // sube el logo
 },
-  titleLine1: {
-    fontSize: 20,
-    fontWeight: "600",
-    color: "#ffffffff",
-    textAlign: "center",
-    marginBottom: 0,
-  },
+ titleLine1: {
+  fontSize: 20,
+  fontWeight: "600",
+  color: "#108227ff",
+  textAlign: "center",
+  marginBottom: 0,
+  textShadowColor: "#000",      // color del borde (negro en este ejemplo)
+  textShadowOffset: { width: 1, height: 1 },
+  textShadowRadius: 1,
+},
+
   titleLine2: {
     fontSize: 28,
     fontWeight: "900",
-    color: "#ffffffff",
+    color: "#108227ff",
     textAlign: "center",
     marginBottom: 4,
+    textShadowColor: "#000",      // color del borde (negro en este ejemplo)
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 1,
   },
   titleLine3: {
     fontSize: 16,
     fontWeight: "500",
-    color: "#ffffffff",
+    color: "#108227ff",
     textAlign: "center",
     marginBottom: 24,
+     textShadowColor: "#000",      // color del borde (negro en este ejemplo)
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 1,
   },
   button: {
     backgroundColor: "#0d8838ff",
@@ -98,9 +108,11 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     shadowOffset: { width: 0, height: 4 },
     elevation: 4,
+    borderWidth: 1,          // grosor del borde
+    borderColor: "#FFFFFF",  // color blanco del borde  
   },
   buttonText: {
-    color: "#ffffffff",
+    color: "#14df39ff",
     fontSize: 18,
     fontWeight: "700",
     letterSpacing: 0.5,

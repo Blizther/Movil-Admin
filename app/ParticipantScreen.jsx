@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { Alert, StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, View,ImageBackground } from 'react-native';
 import LoadingIndicator from '../components/LoadingIndicator';
 import LoginForm from '../components/LoginForm';
 import QRCodeDisplay from '../components/QRCodeDisplay';
@@ -79,39 +79,55 @@ export default function ParticipantScreen() {
     }
   };
 
-  return (
-    <View style={styles.container}>
-      <LoginForm onLogin={handleLogin} />
+return (
+    <ImageBackground
+      source={require('../assets/fondoo.jpg')} // coloca la imagen en /assets
+      style={styles.background}
+      resizeMode="cover" // cover llena la pantalla sin deformar
+    >
+      <View style={styles.overlay}>
+        <LoginForm onLogin={handleLogin} />
 
-      {loading && <LoadingIndicator />}
+        {loading && <LoadingIndicator />}
 
-      {/* Mostrar el QR si está disponible */}
-      {qrUrl && !loading && <QRCodeDisplay qrUrl={qrUrl} />}
+        {qrUrl && !loading && <QRCodeDisplay qrUrl={qrUrl} />}
 
-      {/* Mostrar la actividad registrada */}
-      {activity && (
-        <View style={styles.activityContainer}>
-          <Text style={styles.activityText}>Actividad: {activity}</Text>
-        </View>
-      )}
-    </View>
+        {activity && (
+          <View style={styles.activityContainer}>
+            <Text style={styles.activityText}>Actividad: {activity}</Text>
+          </View>
+        )}
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
+  overlay: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F9FAFB',
     padding: 24,
+    backgroundColor: 'rgba(255,255,255,0)', // opcional: capa clara para mejorar contraste
   },
-  title: {
-    fontSize: 26,
+  activityContainer: {
+    width: '100%',
+    marginTop: 16,
+    padding: 14,
+    backgroundColor: '#E8F5E9',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#C8E6C9',
+  },
+  activityText: {
+    fontSize: 16,
     fontWeight: '700',
-    color: '#0F172A',
-    marginBottom: 24,
-    letterSpacing: 0.2,
+    color: '#2E7D32',
     textAlign: 'center',
   },
 });
