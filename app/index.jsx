@@ -15,7 +15,7 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bienvenido a la App</Text>
+      <Text style={styles.title}>Bienvenido a la app !!!</Text>
       <Button 
         title="Ir a Participantes" 
         onPress={goToParticipantScreen} 
